@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuoteSage AI | Your Personal Inspiration Companion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="app-header">
+            <h1><i class="fas fa-robot"></i> QuoteSage AI</h1>
+            <div class="header-actions">
+                <button id="notifications-btn" class="icon-button" title="Notifications">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <button id="toggle-theme" class="icon-button" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="quote-container">
+            <div class="category-selector">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="motivation">Motivation</button>
+                <button class="category-btn" data-category="success">Success</button>
+                <button class="category-btn" data-category="wisdom">Wisdom</button>
+                <button class="category-btn" data-category="happiness">Happiness</button>
+            </div>
+
+            <div id="quote-display">
+                <div class="quote-wrapper">
+                    <p id="quote-text">Click a button below to get inspired!</p>
+                    <p id="quote-author"></p>
+                </div>
+                <div class="quote-actions">
+                    <button id="copy-quote" class="icon-button" title="Copy Quote">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                    <button id="share-quote" class="icon-button" title="Share Quote">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button id="favorite-quote" class="icon-button" title="Save to Favorites">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button id="random-quote"><i class="fas fa-random"></i> Random Quote</button>
+                <button id="today-quote"><i class="fas fa-calendar-day"></i> Quote of the Day</button>
+                <button id="daily-challenge"><i class="fas fa-tasks"></i> Daily Challenge</button>
+            </div>
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <span><i class="fas fa-comments"></i> Chat with QuoteSage</span>
+                <div class="chat-actions">
+                    <button id="chat-settings" title="Chat Settings">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <button id="clear-chat" title="Clear Chat">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="chat-tabs">
+                <button class="chat-tab active" data-tab="chat">Chat</button>
+                <button class="chat-tab" data-tab="favorites">Favorites</button>
+                <button class="chat-tab" data-tab="challenges">Challenges</button>
+            </div>
+
+            <div id="chat-content" class="tab-content active">
+                <div id="chat-history"></div>
+                <div id="typing-indicator" class="typing-indicator" style="display: none;">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+                <div class="chat-input">
+                    <button id="voice-input" title="Voice Input">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <input type="text" id="user-input" placeholder="Ask for a quote, author, or topic...">
+                    <button id="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="favorites-content" class="tab-content">
+                <div id="favorites-list"></div>
+            </div>
+
+            <div id="challenges-content" class="tab-content">
+                <div class="daily-challenge-card">
+                    <h3>Today's Challenge</h3>
+                    <p id="challenge-text">Complete this challenge to earn points!</p>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <button id="complete-challenge">Mark as Complete</button>
+                </div>
+                <div class="achievements">
+                    <h3>Your Achievements</h3>
+                    <div id="achievements-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="share-modal" class="modal">
+            <div class="modal-content">
+                <h3>Share Quote</h3>
+                <div class="share-buttons">
+                    <button class="share-btn twitter"><i class="fab fa-twitter"></i> Twitter</button>
+                    <button class="share-btn facebook"><i class="fab fa-facebook"></i> Facebook</button>
+                    <button class="share-btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</button>
+                    <button class="share-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                </div>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+
+        <div id="notifications-panel" class="notifications-panel" style="display: none;">
+            <h3><i class="fas fa-bell"></i> Notifications</h3>
+            <div id="notifications-list"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
